@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sebas GZ wiki</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /*body {
+            font-family: Arial, sans-serif;
+            background-image: url('bg.png');
+            background-size: cover;
+            background-position: center;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }*/
+        .universe-selection {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+        .universe-item {
+            text-align: center;
+        }
+        .universe-item img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            transition: transform 0.3s ease;
+        }
+        .universe-item img:hover {
+            transform: scale(1.1);
+        }
+        .universe-item a {
+            display: block;
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+            margin-top: 10px;
+            font-size: 1.2em;
+        }
+        .character-info {
+            text-align: center;
+            color: white;
+            position: relative;
+            z-index: 1;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            justify-content: center;
+            align-items: center;
+            z-index: 10;
+        }
+
+        .modal-content {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 600px;
+            text-align: left;
+            position: relative;
+        }
+
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 25px;
+            font-weight: bold;
+            color: white;
+            cursor: pointer;
+        }
+
+        body.modal-open {
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <div class="character-info">
+        <h1>Sebas GZ wiki</h1>
+        <p id="version-info" style="cursor: pointer;">V.0.000.01 📋</p>
+    </div>
+
+    <!-- Lista de cambios -->
+    <div class="modal" id="changelog-modal">
+        <div class="modal-content">
+            <span class="close" id="close-modal">&times;</span>
+            <h2>V.0.000.01 (16/12/2024) - Lista de cambios</h2>
+            <ul>
+                <li>TEST Versión</li>
+                <!--li></li-->
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        const versionInfo = document.getElementById('version-info');
+        const modal = document.getElementById('changelog-modal');
+        const closeModal = document.getElementById('close-modal');
+
+        versionInfo.addEventListener('click', () => {
+            modal.style.display = 'flex';
+            document.body.classList.add('modal-open');
+        });
+
+        closeModal.addEventListener('click', () => {
+            modal.style.display = 'none';
+            document.body.classList.remove('modal-open');
+        });
+
+        window.addEventListener('click', (event) => {
+            if (event.target === modal) {
+                modal.style.display = 'none';
+                document.body.classList.remove('modal-open');
+            }
+        });
+    </script>
+
+
+    <!-- Universos -->
+    
+    <div class="universe-selection">
+        <!-- MultiHéroes -->
+        <div class="universe-item">
+            <a href="UMH.html">
+                <img src="universes/UMH.png" alt="Universo U-180423">
+            </a>
+        </div>
+        <!-- Realidad Onírica -->
+        <div class="universe-item">
+            <a href="O725.html">
+                <img src="universes/O725.png" alt="Universo O-725">
+            </a>
+        </div>
+        <!-- Mundo Real -->
+        <div class="universe-item">
+            <a href="RW.html">
+                <img src="universes/RW.png" alt="Universo 1">
+            </a>
+        </div>
+        <!-- Gacha Multiversal -->
+        <div class="universe-item">
+            <a href="GMU.html">
+                <img src="universes/GMU.png" alt="Universo G-9432">
+            </a>
+        </div>
+        <!-- En el Bosque -->
+        <div class="universe-item">
+            <a href="EB.html">
+                <img src="universes/EB.png" alt="Universo NET430">
+            </a>
+        </div>
+        <!-- Universo Narrativo -->
+        <div class="universe-item">
+            <a href="VN.html">
+                <img src="universes/VN.png" alt="Universo VN-213">
+            </a>
+        </div>
+        <!-- Universo ? -->
+        <div class="universe-item">
+            <a href="none.html">
+                <img src="universes/none.png" alt="Universo ?">
+            </a>
+        </div>
+        <!-- Universo ? -->
+        <div class="universe-item">
+            <a href="none.html">
+                <img src="universes/none.png" alt="Universo ?">
+            </a>
+        </div>
+        <!-- Universo ? -->
+        <div class="universe-item">
+            <a href="none.html">
+                <img src="universes/none.png" alt="Universo ?">
+            </a>
+        </div>
+        <!-- Universo ? -->
+        <div class="universe-item">
+            <a href="none.html">
+                <img src="universes/none.png" alt="Universo ?">
+            </a>
+        </div>
+        <!-- Universo ? -->
+        <div class="universe-item">
+            <a href="none.html">
+                <img src="universes/none.png" alt="?">
+            </a>
+        </div>
+        <!-- Universo ? -->
+        <div class="universe-item">
+            <a href="music.html">
+                <img src="universes/music.png" alt="Sala de Música">
+            </a>
+        </div>
+    </div>
+  
+</body>
+</html>
