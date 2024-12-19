@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>N.°001 Sebastián</title>
+    <link rel="stylesheet" href="../styles.css">
+    <script>
+        let isRef = false;
+        let currentForma = 'n';
+        
+        function cambiarForma(forma) {
+            currentForma = forma;
+            actualizarImagen();
+            const info = document.getElementById('info-personaje');
+            const poder = document.getElementById('poder-personaje');
+            const arma = document.getElementById('arma-personaje');
+            const perso = document.getElementById('perso-personaje');
+            const code = document.getElementById('code-personaje');
+            
+            if (forma == 'n') {
+                info.innerHTML = 'Un día, el dios del fuego tomó la decisión de renacer en un joven aventurero para tener una vida más emocionante, ya que él estaba aburrido. Desde entonces, vivió una vida llena de aventuras y batallas.';
+                poder.innerHTML = '<b>Poderes:</b> Controla cualquier tipo de fuego existente y que haya existido antes, a su voluntad. Puede hacer literalmente cualquier cosa con ese poder, ya que es el dios absoluto y definitivo del fuego. Por dar un ejemplo, puede crear un universo hecho de puro fuego, con vida hecha de fuego. También posee habilidades como la regeneración infinita de fuego, siempre y cuando exista la existencia. Además, es inmune a su propio poder; básicamente, ningún ser de fuego puede hacerle daño, a menos que él lo permita.'
+                arma.innerHTML = '<b>Arma:</b> Tiene una espada mágica que puede realizar cualquier tipo de magia, sin restricciones, y puede considerarse lo que sea. Sin embargo, solo puede ser utilizada por dos personas: por Sebas y por Lesly. Aunque, si lo desean, se puede permitir que otra persona la use durante unos minutos.'
+                perso.innerHTML = '<b>Personalidad:</b> Es alegre, optimista, un poco torpe, pero serio y centrado en las batallas. Se preocupa mucho por los demás y, sobre todo, por los que ama.'
+                code.value = 'No Disponible';
+            } else if (forma == 'm') {
+                info.innerHTML = '[Descripción Forma Mística]';
+                poder.innerHTML = '<b>Poderes:</b> Controla cualquier tipo de fuego existente y que haya existido antes, a su voluntad. Puede hacer literalmente cualquier cosa con ese poder, ya que es el dios absoluto y definitivo del fuego. Por dar un ejemplo, puede crear un universo hecho de puro fuego, con vida hecha de fuego. También posee habilidades como la regeneración infinita de fuego, siempre y cuando exista la existencia. Además, es inmune a su propio poder; básicamente, ningún ser de fuego puede hacerle daño, a menos que él lo permita.'
+                arma.innerHTML = '<b>Arma:</b> Tiene una espada mágica que puede realizar cualquier tipo de magia, sin restricciones, y puede considerarse lo que sea. Sin embargo, solo puede ser utilizada por dos personas: por Sebas y por Lesly. Aunque, si lo desean, se puede permitir que otra persona la use durante unos minutos.'
+                perso.innerHTML = '<b>Personalidad:</b> Es alegre, optimista, un poco torpe, pero serio y centrado en las batallas. Se preocupa mucho por los demás y, sobre todo, por los que ama.'
+                code.value = 'No disponible';
+            }
+        }
+
+        function actualizarImagen() {
+            const imagen = document.getElementById('imagen-personaje');
+            if (currentForma === 'n') {
+                imagen.src = isRef ? '000r.png' : '001.png';
+            } else if (currentForma === 'f2') {
+                imagen.src = isRef ? '000ar.png' : '001a.png';
+            }
+        }
+
+        function alternarRef() {
+            isRef = !isRef;
+            actualizarImagen();
+        }
+
+        function copiarAlPortapapeles(id) {
+            const code = document.getElementById(id);
+            code.select();
+            code.setSelectionRange(0, 99999);
+            document.execCommand("copy");
+        }
+    </script>
+</head>
+<body>
+    <div class="character-info">
+        <h1>N.°001 Sebastián</h1>
+    </div>
+    <div class="character-info">
+        <img id="imagen-personaje" src="001.png" alt="">
+    </div>
+    <div class="forma-buttons">
+        <!--button onclick="cambiarForma('n')">Normal</button>
+        <button onclick="cambiarForma('f2')">Forma 2</button-->
+        <button onclick="alternarRef()">✨</button>
+    </div>
+    <div class="character-info">
+        <p>
+            Elemento<p class="type-icon type-fire">Fuego</p>
+        </p>
+        <pre></pre>
+        <p>
+            Sexo<p class="type-icon type-male">Masculino</p>
+        </p>
+    </div>
+    <div class="forma-buttons">
+        <input type="text" id="code-personaje" value="No Disponible" readonly>
+        <button onclick="copiarAlPortapapeles('code-personaje')">Copiar OC</button>
+    </div>
+    <div class="character-info" id="info-personaje">
+        <p>Un día, el dios del fuego tomó la decisión de renacer en un joven aventurero para tener una vida más emocionante, ya que él estaba aburrido. Desde entonces, vivió una vida llena de aventuras y batallas.</p>
+    </div>
+    <div class="character-info" id="poder-personaje">
+        <p><b>Poderes:</b> Controla cualquier tipo de fuego existente y que haya existido antes, a su voluntad. Puede hacer literalmente cualquier cosa con ese poder, ya que es el dios absoluto y definitivo del fuego. Por dar un ejemplo, puede crear un universo hecho de puro fuego, con vida hecha de fuego. También posee habilidades como la regeneración infinita de fuego, siempre y cuando exista la existencia. Además, es inmune a su propio poder; básicamente, ningún ser de fuego puede hacerle daño, a menos que él lo permita.</p>
+    </div>
+    <div class="character-info" id="arma-personaje">
+        <p><b>Arma:</b> Tiene una espada mágica que puede realizar cualquier tipo de magia, sin restricciones, y puede considerarse lo que sea. Sin embargo, solo puede ser utilizada por dos personas: por Sebas y por Lesly. Aunque, si lo desean, se puede permitir que otra persona la use durante unos minutos.</p>
+    </div>
+    <div class="character-info" id="perso-personaje">
+        <p><b>Personalidad:</b> Es alegre, optimista, un poco torpe, pero serio y centrado en las batallas. Se preocupa mucho por los demás y, sobre todo, por los que ama.</p>
+    </div>
+    <div class="character-info">
+        <p>♫ Tema de Sebastián</p>
+            <audio controls loop>
+                <source src="001.mp3" type="audio/mpeg">
+                Tu navegador no soporta el elemento de audio.
+    </div>
+    <div class="character-item">
+        <a href="002.html">Siguiente: N.°002 David</a>
+    </div>
+    <div class="character-item">
+        <a href="../SGZ.html">Regresar</a>
+    </div>
+    <pre> </pre>
+</body>
+</html>
