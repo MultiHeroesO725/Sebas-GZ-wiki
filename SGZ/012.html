@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>N.°012 Brenda</title>
+    <link rel="stylesheet" href="../styles.css">
+    <script>
+        let isRef = false;
+        let currentForma = 'n';
+        
+        function cambiarForma(forma) {
+            currentForma = forma;
+            actualizarImagen();
+            const info = document.getElementById('info-personaje');
+            const poder = document.getElementById('poder-personaje');
+            const arma = document.getElementById('arma-personaje');
+            const perso = document.getElementById('perso-personaje');
+            const code = document.getElementById('code-personaje');
+            
+            if (forma == 'n') {
+                info.innerHTML = 'Cuando era apenas una niña, un extraño demonio la poseyó y le otorgó un poder descomunal, lo que la llevó a la locura y a desarrollar una obsesión incontrolable. Debido a esto, se deja llevar fácilmente por sus emociones, especialmente el amor y la obsesión, lo que la hace altamente impredecible.';
+                poder.innerHTML = '<b>Poderes:</b> Posee superfuerza, supervelocidad y una resistencia absurda. Es capaz de romper las leyes de la física y la lógica, alterar la realidad misma y es completamente indestructible e inmortal. Su poder aumenta exponencialmente a cada nanosegundo.'
+                arma.innerHTML = '<b>Arma:</b> Tiene un cuchillo especial, aunque rara vez lo utiliza.'
+                perso.innerHTML = '<b>Personalidad:</b> Es extremadamente inestable y bipolar, cambiando de estado emocional de forma abrupta. Se enoja, se emociona, se enamora, etc, con mucha facilidad. Su rasgo más dominante es su obsesión, además de ser depravada, pervertida y psicópata.'
+                code.value = 'No Disponible';
+            } else if (forma == 'm') {
+                info.innerHTML = '[Descripción Forma 2]';
+                poder.innerHTML = '<b>Poderes:</b> '
+                arma.innerHTML = '<b>Arma:</b> '
+                perso.innerHTML = '<b>Personalidad:</b> '
+                code.value = 'No Disponible';
+            }
+        }
+
+        function actualizarImagen() {
+            const imagen = document.getElementById('imagen-personaje');
+            if (currentForma === 'n') {
+                imagen.src = isRef ? '000r.png' : '012.png';
+            } else if (currentForma === 'm') {
+                imagen.src = isRef ? '000ar.png' : '012a.png';
+            }
+        }
+
+        function alternarRef() {
+            isRef = !isRef;
+            actualizarImagen();
+        }
+
+        function copiarAlPortapapeles(id) {
+            const code = document.getElementById(id);
+            code.select();
+            code.setSelectionRange(0, 99999);
+            document.execCommand("copy");
+        }
+    </script>
+</head>
+<body>
+    <div class="character-info">
+        <h1>N.°012 Brenda</h1>
+    </div>
+    <div class="character-info">
+        <img id="imagen-personaje" src="012.png" alt="">
+    </div>
+    <!--div class="forma-buttons">
+        <button onclick="cambiarForma('n')">Normal</button>
+        <button onclick="cambiarForma('m')">Mística</button>
+    </div-->
+    <div class="character-info">
+        <p>
+            Sexo<p class="type-icon type-female">Femenino</p>
+        </p>
+    </div>
+    <!--div class="forma-buttons">
+        <input type="text" id="code-personaje" value="No Disponible" readonly>
+        <button onclick="copiarAlPortapapeles('code-personaje')">Copiar OC</button>
+    </div-->
+    <div class="character-info" id="info-personaje">
+        <p>Cuando era apenas una niña, un extraño demonio la poseyó y le otorgó un poder descomunal, lo que la llevó a la locura y a desarrollar una obsesión incontrolable. Debido a esto, se deja llevar fácilmente por sus emociones, especialmente el amor y la obsesión, lo que la hace altamente impredecible.</p>
+    </div>
+    <div class="character-info" id="poder-personaje">
+        <p><b>Poderes:</b> Posee superfuerza, supervelocidad y una resistencia absurda. Es capaz de romper las leyes de la física y la lógica, alterar la realidad misma y es completamente indestructible e inmortal. Su poder aumenta exponencialmente a cada nanosegundo.</p>
+    </div>
+    <div class="character-info" id="arma-personaje">
+        <p><b>Arma:</b> Tiene un cuchillo especial, aunque rara vez lo utiliza.</p>
+    </div>
+    <div class="character-info" id="perso-personaje">
+        <p><b>Personalidad:</b> Es extremadamente inestable y bipolar, cambiando de estado emocional de forma abrupta. Se enoja, se emociona, se enamora, etc, con mucha facilidad. Su rasgo más dominante es su obsesión, además de ser depravada, pervertida y psicópata.</p>
+    </div>
+    <!--div class="character-info">
+        <p>♫ Tema de Sebastián</p>
+            <audio controls loop>
+                <source src="001.mp3" type="audio/mpeg">
+                Tu navegador no soporta el elemento de audio.
+    </div-->
+    <div class="character-item">
+        <a href=".html">Anterior: N.°011 Christopher</a>
+    </div>
+    <div class="character-item">
+        <a href="../SGZ.html">Regresar</a>
+    </div>
+    <pre> </pre>
+</body>
+</html>
