@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>N.°006 Oliver</title>
+    <link rel="stylesheet" href="../styles.css">
+    <script>
+        let isRef = false;
+        let currentForma = 'n';
+        
+        function cambiarForma(forma) {
+            currentForma = forma;
+            actualizarImagen();
+            const info = document.getElementById('info-personaje');
+            const poder = document.getElementById('poder-personaje');
+            const arma = document.getElementById('arma-personaje');
+            const perso = document.getElementById('perso-personaje');
+            const code = document.getElementById('code-personaje');
+            
+            if (forma == 'n') {
+                info.innerHTML = 'Era un chico completamente normal, hasta que conoció a una chica que desarrolló una obsesión enfermiza por él. Su amor descontrolado arruinó su vida y lo llevó al camino del crimen. Sin embargo, tras verse involucrado en batallas con dioses increíblemente poderosos, su destino cambió. Finalmente, obtuvo sus poderes gracias a unos alienígenas y comenzó a participar en enfrentamientos que trascendían los múltiples universos.';
+                poder.innerHTML = '<b>Poderes:</b> Posee supervelocidad, superfuerza y superresistencia. También puede disparar rayos láser desde sus ojos y manos. Todos estos poderes están a niveles extremadamente altos, hasta el punto de que su fuerza es comparable a la de los Elementales, aunque en una escala mucho menor.'
+                arma.innerHTML = '<b>Arma:</b> A través de sus relojes, puede invocar un arma de energía que adopta cualquier forma, como un escudo o una lanza.'
+                perso.innerHTML = '<b>Personalidad:</b> Alegre, tranquilo y algo tonto. Es un poco engreído y le importa poco lo que sucede a su alrededor, pero a la vez es muy amigable.'
+                code.value = 'No Disponible';
+            } else if (forma == 'm') {
+                info.innerHTML = '[Descripción Forma 2]';
+                poder.innerHTML = '<b>Poderes:</b> '
+                arma.innerHTML = '<b>Arma:</b> '
+                perso.innerHTML = '<b>Personalidad:</b> '
+                code.value = 'No Disponible';
+            }
+        }
+
+        function actualizarImagen() {
+            const imagen = document.getElementById('imagen-personaje');
+            if (currentForma === 'n') {
+                imagen.src = isRef ? '000r.png' : '006.png';
+            } else if (currentForma === 'm') {
+                imagen.src = isRef ? '000ar.png' : '006a.png';
+            }
+        }
+
+        function alternarRef() {
+            isRef = !isRef;
+            actualizarImagen();
+        }
+
+        function copiarAlPortapapeles(id) {
+            const code = document.getElementById(id);
+            code.select();
+            code.setSelectionRange(0, 99999);
+            document.execCommand("copy");
+        }
+    </script>
+</head>
+<body>
+    <div class="character-info">
+        <h1>N.°006 Oliver</h1>
+    </div>
+    <div class="character-info">
+        <img id="imagen-personaje" src="006.png" alt="">
+    </div>
+    <!--div class="forma-buttons">
+        <button onclick="cambiarForma('n')">Normal</button>
+        <button onclick="cambiarForma('m')">Mística</button>
+    </div-->
+    <div class="character-info">
+        <p>
+            Sexo<p class="type-icon type-male">Masculino</p>
+        </p>
+    </div>
+    <!--div class="forma-buttons">
+        <input type="text" id="code-personaje" value="No Disponible" readonly>
+        <button onclick="copiarAlPortapapeles('code-personaje')">Copiar OC</button>
+    </div-->
+    <div class="character-info" id="info-personaje">
+        <p>Era un chico completamente normal, hasta que conoció a una chica que desarrolló una obsesión enfermiza por él. Su amor descontrolado arruinó su vida y lo llevó al camino del crimen. Sin embargo, tras verse involucrado en batallas con dioses increíblemente poderosos, su destino cambió. Finalmente, obtuvo sus poderes gracias a unos alienígenas y comenzó a participar en enfrentamientos que trascendían los múltiples universos.</p>
+    </div>
+    <div class="character-info" id="poder-personaje">
+        <p><b>Poderes:</b> Posee supervelocidad, superfuerza y superresistencia. También puede disparar rayos láser desde sus ojos y manos. Todos estos poderes están a niveles extremadamente altos, hasta el punto de que su fuerza es comparable a la de los Elementales, aunque en una escala mucho menor.</p>
+    </div>
+    <div class="character-info" id="arma-personaje">
+        <p><b>Arma:</b> A través de sus relojes, puede invocar un arma de energía que adopta cualquier forma, como un escudo o una lanza.</p>
+    </div>
+    <div class="character-info" id="perso-personaje">
+        <p><b>Personalidad:</b> Alegre, tranquilo y algo tonto. Es un poco engreído y le importa poco lo que sucede a su alrededor, pero a la vez es muy amigable.</p>
+    </div>
+    <!--div class="character-info">
+        <p>♫ Tema de Sebastián</p>
+            <audio controls loop>
+                <source src="001.mp3" type="audio/mpeg">
+                Tu navegador no soporta el elemento de audio.
+    </div-->
+    <div class="character-item">
+        <a href="005.html">Anterior: N.°005 Valeria</a>
+    </div>
+    <div class="character-item">
+        <a href="007.html">Siguiente: N.°007 Kirito</a>
+    </div>
+    <div class="character-item">
+        <a href="../SGZ.html">Regresar</a>
+    </div>
+    <pre> </pre>
+</body>
+</html>
