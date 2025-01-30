@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>N.°011 Christopher</title>
+    <link rel="stylesheet" href="../styles.css">
+    <script>
+        let isRef = false;
+        let currentForma = 'n';
+        
+        function cambiarForma(forma) {
+            currentForma = forma;
+            actualizarImagen();
+            const info = document.getElementById('info-personaje');
+            const poder = document.getElementById('poder-personaje');
+            const arma = document.getElementById('arma-personaje');
+            const perso = document.getElementById('perso-personaje');
+            const code = document.getElementById('code-personaje');
+            
+            if (forma == 'n') {
+                info.innerHTML = 'En el pasado, fue el dios elemental del aire, pero fue corrompido por la energía maligna que creó a Overkill, convirtiéndose en un villano. Con el tiempo, su poder le fue arrebatado junto con la maldad que lo controlaba, dejándolo como un mortal. A pesar de haber perdido su divinidad, sigue siendo un guerrero extremadamente poderoso.';
+                poder.innerHTML = '<b>Poderes:</b> Posee superfuerza, supervelocidad y la capacidad de volar. Todas estas habilidades están en niveles extremadamente altos.'
+                arma.innerHTML = '<b>Arma:</b> Usa una pistola especial capaz de causar un daño devastador.'
+                perso.innerHTML = '<b>Personalidad:</b> Es callado, serio y pensativo. Aunque generalmente es muy calmado y reservado, de vez en cuando muestra su lado humorístico.'
+                code.value = 'No Disponible';
+            } else if (forma == 'm') {
+                info.innerHTML = '[Descripción Forma 2]';
+                poder.innerHTML = '<b>Poderes:</b> '
+                arma.innerHTML = '<b>Arma:</b> '
+                perso.innerHTML = '<b>Personalidad:</b> '
+                code.value = 'No Disponible';
+            }
+        }
+
+        function actualizarImagen() {
+            const imagen = document.getElementById('imagen-personaje');
+            if (currentForma === 'n') {
+                imagen.src = isRef ? '000r.png' : '011.png';
+            } else if (currentForma === 'm') {
+                imagen.src = isRef ? '000ar.png' : '011a.png';
+            }
+        }
+
+        function alternarRef() {
+            isRef = !isRef;
+            actualizarImagen();
+        }
+
+        function copiarAlPortapapeles(id) {
+            const code = document.getElementById(id);
+            code.select();
+            code.setSelectionRange(0, 99999);
+            document.execCommand("copy");
+        }
+    </script>
+</head>
+<body>
+    <div class="character-info">
+        <h1>N.°011 Christopher</h1>
+    </div>
+    <div class="character-info">
+        <img id="imagen-personaje" src="011.png" alt="">
+    </div>
+    <!--div class="forma-buttons">
+        <button onclick="cambiarForma('n')">Normal</button>
+        <button onclick="cambiarForma('m')">Mística</button>
+    </div-->
+    <div class="character-info">
+        <p>
+            Ex-Elemento<p class="type-icon type-wind">Aire</p>
+        </p>
+        <pre></pre>
+        <p>
+            Sexo<p class="type-icon type-male">Masculino</p>
+        </p>
+    </div>
+    <!--div class="forma-buttons">
+        <input type="text" id="code-personaje" value="No Disponible" readonly>
+        <button onclick="copiarAlPortapapeles('code-personaje')">Copiar OC</button>
+    </div-->
+    <div class="character-info" id="info-personaje">
+        <p>En el pasado, fue el dios elemental del aire, pero fue corrompido por la energía maligna que creó a Overkill, convirtiéndose en un villano. Con el tiempo, su poder le fue arrebatado junto con la maldad que lo controlaba, dejándolo como un mortal. A pesar de haber perdido su divinidad, sigue siendo un guerrero extremadamente poderoso.</p>
+    </div>
+    <div class="character-info" id="poder-personaje">
+        <p><b>Poderes:</b> Posee superfuerza, supervelocidad y la capacidad de volar. Todas estas habilidades están en niveles extremadamente altos.</p>
+    </div>
+    <div class="character-info" id="arma-personaje">
+        <p><b>Arma:</b> Usa una pistola especial capaz de causar un daño devastador.</p>
+    </div>
+    <div class="character-info" id="perso-personaje">
+        <p><b>Personalidad:</b> Es callado, serio y pensativo. Aunque generalmente es muy calmado y reservado, de vez en cuando muestra su lado humorístico.</p>
+    </div>
+    <!--div class="character-info">
+        <p>♫ Tema de Sebastián</p>
+            <audio controls loop>
+                <source src="001.mp3" type="audio/mpeg">
+                Tu navegador no soporta el elemento de audio.
+    </div-->
+    <div class="character-item">
+        <a href="010.html">Anterior: N.°010 Taira</a>
+    </div>
+    <div class="character-item">
+        <a href="012.html">Siguiente: N.°012 Brenda</a>
+    </div>
+    <div class="character-item">
+        <a href="../SGZ.html">Regresar</a>
+    </div>
+    <pre> </pre>
+</body>
+</html>
