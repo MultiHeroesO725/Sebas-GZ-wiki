@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>N.°003 Anderson</title>
+    <link rel="stylesheet" href="../styles.css">
+    <script>
+        let isRef = false;
+        let currentForma = 'n';
+        
+        function cambiarForma(forma) {
+            currentForma = forma;
+            actualizarImagen();
+            const info = document.getElementById('info-personaje');
+            const poder = document.getElementById('poder-personaje');
+            const arma = document.getElementById('arma-personaje');
+            const perso = document.getElementById('perso-personaje');
+            const code = document.getElementById('code-personaje');
+            
+            if (forma == 'n') {
+                info.innerHTML = 'Como se había quedado solo en el desconocido universo elemental y no podía hacer nada para evitar que sus compañeros viajaran a diferentes épocas para reencarnar como aventureros, decidió hacer lo mismo. Sin embargo, en lugar de ser un aventurero, optó por llevar una vida normal en un futuro muy lejano. No fue hasta que ese futuro fue alterado por un villano que viajó al pasado, que decidió luchar para salvar su época y recuperar a la familia que perdió.';
+                poder.innerHTML = '<b>Poderes:</b> Anderson es el dios definitivo del elemento tierra o naturaleza. Puede controlar la tierra y todo lo relacionado con ella. Al igual que Sebastián y David, puede hacer lo que quiera con su elemento. Por ejemplo, puede crear titanes de tierra de tamaño universal. Además, posee un gran nivel intelectual, junto con la habilidad de ver el pasado con solo pensarlo, y es inmune a las paradojas del tiempo.'
+                arma.innerHTML = '<b>Arma:</b> Cuenta con la Tecno Espada, una espada tecnológica capaz de hacer varias cosas, como viajar en el tiempo, realizar cortes atómicos y controlar cualquier tecnología. Solo alguien extremadamente inteligente, con conocimientos de un nivel exageradamente alto en ciencia, puede saber cómo usarla.'
+                perso.innerHTML = '<b>Personalidad:</b> Es serio, alegre y responsable. Es muy reservado con todos, pero en su interior es profundamente sentimental, aunque nunca lo demuestra delante de los demás.'
+                code.value = 'No Disponible';
+            } else if (forma == 'm') {
+                info.innerHTML = '[Descripción Forma 2]';
+                poder.innerHTML = '<b>Poderes:</b> '
+                arma.innerHTML = '<b>Arma:</b> '
+                perso.innerHTML = '<b>Personalidad:</b> '
+                code.value = 'No Disponible';
+            }
+        }
+
+        function actualizarImagen() {
+            const imagen = document.getElementById('imagen-personaje');
+            if (currentForma === 'n') {
+                imagen.src = isRef ? '000r.png' : '003.png';
+            } else if (currentForma === 'm') {
+                imagen.src = isRef ? '000ar.png' : '003a.png';
+            }
+        }
+
+        function alternarRef() {
+            isRef = !isRef;
+            actualizarImagen();
+        }
+
+        function copiarAlPortapapeles(id) {
+            const code = document.getElementById(id);
+            code.select();
+            code.setSelectionRange(0, 99999);
+            document.execCommand("copy");
+        }
+    </script>
+</head>
+<body>
+    <div class="character-info">
+        <h1>N.°003 Anderson</h1>
+    </div>
+    <div class="character-info">
+        <img id="imagen-personaje" src="003.png" alt="">
+    </div>
+    <!--div class="forma-buttons">
+        <button onclick="cambiarForma('n')">Normal</button>
+        <button onclick="cambiarForma('m')">Mística</button>
+    </div-->
+    <div class="character-info">
+        <p>
+            Elemento<p class="type-icon type-nature">Tierra</p>
+        </p>
+        <pre></pre>
+        <p>
+            Sexo<p class="type-icon type-male">Masculino</p>
+        </p>
+    </div>
+    <!--div class="forma-buttons">
+        <input type="text" id="code-personaje" value="No Disponible" readonly>
+        <button onclick="copiarAlPortapapeles('code-personaje')">Copiar OC</button>
+    </div-->
+    <div class="character-info" id="info-personaje">
+        <p>Como se había quedado solo en el desconocido universo elemental y no podía hacer nada para evitar que sus compañeros viajaran a diferentes épocas para reencarnar como aventureros, decidió hacer lo mismo. Sin embargo, en lugar de ser un aventurero, optó por llevar una vida normal en un futuro muy lejano. No fue hasta que ese futuro fue alterado por un villano que viajó al pasado, que decidió luchar para salvar su época y recuperar a la familia que perdió.</p>
+    </div>
+    <div class="character-info" id="poder-personaje">
+        <p><b>Poderes:</b> Anderson es el dios definitivo del elemento tierra o naturaleza. Puede controlar la tierra y todo lo relacionado con ella. Al igual que Sebastián y David, puede hacer lo que quiera con su elemento. Por ejemplo, puede crear titanes de tierra de tamaño universal. Además, posee un gran nivel intelectual, junto con la habilidad de ver el pasado con solo pensarlo, y es inmune a las paradojas del tiempo.</p>
+    </div>
+    <div class="character-info" id="arma-personaje">
+        <p><b>Arma:</b> Cuenta con la Tecno Espada, una espada tecnológica capaz de hacer varias cosas, como viajar en el tiempo, realizar cortes atómicos y controlar cualquier tecnología. Solo alguien extremadamente inteligente, con conocimientos de un nivel exageradamente alto en ciencia, puede saber cómo usarla.</p>
+    </div>
+    <div class="character-info" id="perso-personaje">
+        <p><b>Personalidad:</b> Es serio, alegre y responsable. Es muy reservado con todos, pero en su interior es profundamente sentimental, aunque nunca lo demuestra delante de los demás.</p>
+    </div>
+    <!--div class="character-info">
+        <p>♫ Tema de Anderson</p>
+            <audio controls loop>
+                <source src="003.mp3" type="audio/mpeg">
+                Tu navegador no soporta el elemento de audio.
+    </div-->
+    <div class="character-item">
+        <a href="002.html">Anterior: N.°002 David</a>
+    </div>
+    <div class="character-item">
+        <a href="004.html">Siguiente: N.°004 Lesly</a>
+    </div>
+    <div class="character-item">
+        <a href="../SGZ.html">Regresar</a>
+    </div>
+    <pre> </pre>
+</body>
+</html>
