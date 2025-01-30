@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>N.°007 Kirito</title>
+    <link rel="stylesheet" href="../styles.css">
+    <script>
+        let isRef = false;
+        let currentForma = 'n';
+        
+        function cambiarForma(forma) {
+            currentForma = forma;
+            actualizarImagen();
+            const info = document.getElementById('info-personaje');
+            const poder = document.getElementById('poder-personaje');
+            const arma = document.getElementById('arma-personaje');
+            const perso = document.getElementById('perso-personaje');
+            const code = document.getElementById('code-personaje');
+            
+            if (forma == 'n') {
+                info.innerHTML = 'Es originario de un planeta lejano. Por accidente, mató al presidente de su mundo y fue exiliado. Durante su viaje por el espacio, se encontró con una peculiar agencia de policía espacial que decidió contratarlo. Desde entonces, junto a su compañera Moe, se dedica a proteger los universos, aunque nunca se toma su trabajo demasiado en serio.';
+                poder.innerHTML = '<b>Poderes:</b> Posee telepatía, telequinesis, supervelocidad y una inteligencia superior. Además, es un experto en combate y domina diversas técnicas de lucha.'
+                arma.innerHTML = '<b>Arma:</b> Puede manejar cualquier arma tecnológica que tenga en sus manos.'
+                perso.innerHTML = '<b>Personalidad:</b> Alegre, alocado y extremadamente inteligente. Es bromista y tiende a tomarse muchas cosas a la ligera. Sin embargo, se irrita fácilmente cuando alguien toca sus cosas.'
+                code.value = 'No Disponible';
+            } else if (forma == 'm') {
+                info.innerHTML = '[Descripción Forma 2]';
+                poder.innerHTML = '<b>Poderes:</b> '
+                arma.innerHTML = '<b>Arma:</b> '
+                perso.innerHTML = '<b>Personalidad:</b> '
+                code.value = 'No Disponible';
+            }
+        }
+
+        function actualizarImagen() {
+            const imagen = document.getElementById('imagen-personaje');
+            if (currentForma === 'n') {
+                imagen.src = isRef ? '000r.png' : '007.png';
+            } else if (currentForma === 'm') {
+                imagen.src = isRef ? '000ar.png' : '007a.png';
+            }
+        }
+
+        function alternarRef() {
+            isRef = !isRef;
+            actualizarImagen();
+        }
+
+        function copiarAlPortapapeles(id) {
+            const code = document.getElementById(id);
+            code.select();
+            code.setSelectionRange(0, 99999);
+            document.execCommand("copy");
+        }
+    </script>
+</head>
+<body>
+    <div class="character-info">
+        <h1>N.°007 Kirito</h1>
+    </div>
+    <div class="character-info">
+        <img id="imagen-personaje" src="007.png" alt="">
+    </div>
+    <!--div class="forma-buttons">
+        <button onclick="cambiarForma('n')">Normal</button>
+        <button onclick="cambiarForma('m')">Mística</button>
+    </div-->
+    <div class="character-info">
+        <p>
+            Sexo<p class="type-icon type-male">Masculino</p>
+        </p>
+    </div>
+    <!--div class="forma-buttons">
+        <input type="text" id="code-personaje" value="No Disponible" readonly>
+        <button onclick="copiarAlPortapapeles('code-personaje')">Copiar OC</button>
+    </div-->
+    <div class="character-info" id="info-personaje">
+        <p>Es originario de un planeta lejano. Por accidente, mató al presidente de su mundo y fue exiliado. Durante su viaje por el espacio, se encontró con una peculiar agencia de policía espacial que decidió contratarlo. Desde entonces, junto a su compañera Moe, se dedica a proteger los universos, aunque nunca se toma su trabajo demasiado en serio.</p>
+    </div>
+    <div class="character-info" id="poder-personaje">
+        <p><b>Poderes:</b> Posee telepatía, telequinesis, supervelocidad y una inteligencia superior. Además, es un experto en combate y domina diversas técnicas de lucha.</p>
+    </div>
+    <div class="character-info" id="arma-personaje">
+        <p><b>Arma:</b> Puede manejar cualquier arma tecnológica que tenga en sus manos.</p>
+    </div>
+    <div class="character-info" id="perso-personaje">
+        <p><b>Personalidad:</b> Alegre, alocado y extremadamente inteligente. Es bromista y tiende a tomarse muchas cosas a la ligera. Sin embargo, se irrita fácilmente cuando alguien toca sus cosas.</p>
+    </div>
+    <!--div class="character-info">
+        <p>♫ Tema de Sebastián</p>
+            <audio controls loop>
+                <source src="001.mp3" type="audio/mpeg">
+                Tu navegador no soporta el elemento de audio.
+    </div-->
+    <div class="character-item">
+        <a href="006.html">Anterior: N.°006 Oliver</a>
+    </div>
+    <div class="character-item">
+        <a href="008.html">Siguiente: N.°008 Moe</a>
+    </div>
+    <div class="character-item">
+        <a href="../SGZ.html">Regresar</a>
+    </div>
+    <pre> </pre>
+</body>
+</html>
