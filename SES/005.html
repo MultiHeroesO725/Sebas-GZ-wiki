@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>N.°00</title>
+    <link rel="stylesheet" href="../styles.css">
+    <script>
+        let isRef = false;
+        let currentForma = 'n';
+        
+        function cambiarForma(forma) {
+            currentForma = forma;
+            actualizarImagen();
+            const info = document.getElementById('info-personaje');
+            const poder = document.getElementById('poder-personaje');
+            const arma = document.getElementById('arma-personaje');
+            const perso = document.getElementById('perso-personaje');
+            const code = document.getElementById('code-personaje');
+            
+            if (forma == 'n') {
+                info.innerHTML = '';
+                poder.innerHTML = '<b>Poderes:</b> '
+                arma.innerHTML = '<b>Arma:</b> '
+                perso.innerHTML = '<b>Personalidad:</b> '
+                code.value = 'No Disponible';
+            } else if (forma == 'm') {
+                info.innerHTML = '[Descripción Forma 2]';
+                poder.innerHTML = '<b>Poderes:</b> '
+                arma.innerHTML = '<b>Arma:</b> '
+                perso.innerHTML = '<b>Personalidad:</b> '
+                code.value = 'No Disponible';
+            }
+        }
+
+        function actualizarImagen() {
+            const imagen = document.getElementById('imagen-personaje');
+            if (currentForma === 'n') {
+                imagen.src = isRef ? '000r.png' : '.png';
+            } else if (currentForma === 'm') {
+                imagen.src = isRef ? '000ar.png' : 'a.png';
+            }
+        }
+
+        function alternarRef() {
+            isRef = !isRef;
+            actualizarImagen();
+        }
+
+        function copiarAlPortapapeles(id) {
+            const code = document.getElementById(id);
+            code.select();
+            code.setSelectionRange(0, 99999);
+            document.execCommand("copy");
+        }
+    </script>
+</head>
+<body>
+    <div class="character-info">
+        <h1>N.°</h1>
+    </div>
+    <div class="character-info">
+        <img id="imagen-personaje" src=".png" alt="">
+    </div>
+    <!--div class="forma-buttons">
+        <button onclick="cambiarForma('n')">Normal</button>
+        <button onclick="cambiarForma('m')">Mística</button>
+    </div-->
+    <div class="character-info">
+        <p>
+            Sexo<p class="type-icon type-male">Masculino</p>
+        </p>
+    </div>
+    <!--div class="forma-buttons">
+        <input type="text" id="code-personaje" value="No Disponible" readonly>
+        <button onclick="copiarAlPortapapeles('code-personaje')">Copiar OC</button>
+    </div-->
+    <div class="character-info" id="info-personaje">
+        <p></p>
+    </div>
+    <div class="character-info" id="poder-personaje">
+        <p><b>Poderes:</b> </p>
+    </div>
+    <div class="character-info" id="arma-personaje">
+        <p><b>Arma:</b> </p>
+    </div>
+    <div class="character-info" id="perso-personaje">
+        <p><b>Personalidad:</b> </p>
+    </div>
+    <!--div class="character-info">
+        <p>♫ Tema de Sebastián</p>
+            <audio controls loop>
+                <source src="001.mp3" type="audio/mpeg">
+                Tu navegador no soporta el elemento de audio.
+    </div-->
+    <div class="character-item">
+        <a href="00.html">Anterior: N.°</a>
+    </div>
+    <div class="character-item">
+        <a href="00.html">Siguiente: N.°</a>
+    </div>
+    <div class="character-item">
+        <a href="../SES.html">Regresar</a>
+    </div>
+    <pre> </pre>
+</body>
+</html>
